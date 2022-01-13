@@ -1,0 +1,40 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+# default_platform(:ios)
+
+# platform :ios do
+#   desc "Description of what the lane does"
+#   lane :custom_lane do
+#     # add actions here: https://docs.fastlane.tools/actions
+#   end
+# end
+
+
+default_platform(:android)
+platform :android do
+
+  lane :huawei do
+    huawei_appgallery_connect(
+      client_id: "777417207125658944",
+      client_secret: "CF77037FAF87AE077811561EF4CF062EF961EE68EB65ED838401B5CA38872187",
+      app_id: "105093717",
+      is_aab: true ,
+      submit_for_review: false,
+      apk_path: "app-ac-signed.aab"
+    )
+  end
+
+end
